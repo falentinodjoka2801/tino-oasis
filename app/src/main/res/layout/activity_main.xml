@@ -1,61 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
-    android:padding="16dp"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/panjang" />
-
-    <EditText
-        android:id="@+id/panjang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/lebar" />
-    <EditText
-        android:id="@+id/lebar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tinggi" />
-    <EditText
-        android:id="@+id/tinggi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <Button
-        android:id="@+id/hitung"
+        android:id="@+id/buttonMoveActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hitung" />
+        android:layout_marginBottom="16dp"
+        android:text="@string/move_activity"/>
 
-    <TextView
-        android:id="@+id/hasil"
+    <EditText
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/hasil"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
+        android:hint="Type your name here .."
+        android:inputType="textPersonName"
+        android:layout_marginBottom="16dp"/>
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your age"
+        android:inputType="number"
+        android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/buttonMoveActivityWithData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Send This Data" />
 
 </LinearLayout>

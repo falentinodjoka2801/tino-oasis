@@ -14,4 +14,6 @@
     <string name="tinggi">Tinggi</string>
     <string name="hitung">Hitung</string>
     <string name="hasil">Hasil</string>
+
+    <string name="move_activity">Move Activity</string>
 </resources>

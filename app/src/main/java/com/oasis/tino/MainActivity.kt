@@ -1,58 +1,43 @@
 package com.oasis.tino
 
+import android.content.Intent
 import android.os.Bundle
+
 import android.view.View
 
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var panjang: EditText
-    private lateinit var lebar: EditText
-    private lateinit var tinggi: EditText
-    private lateinit var buttonHitung: Button
-    private lateinit var hasil: TextView
+class MainActivity: AppCompatActivity(), View.OnClickListener {
+    private lateinit var buttonMoveActivity: Button
+    private lateinit var buttonMoveActivityWithData: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        panjang =   findViewById(R.id.panjang)
-        lebar   =   findViewById(R.id.lebar)
-        tinggi  =   findViewById(R.id.tinggi)
-        buttonHitung    =   findViewById(R.id.hitung)
-        hasil   =   findViewById(R.id.hasil)
-
-        buttonHitung.setOnClickListener(this)
+        buttonMoveActivity          =   findViewById(R.id.buttonMoveActivity)
+        buttonMoveActivityWithData  =   findViewById(R.id.buttonMoveActivityWithData)
+        buttonMoveActivity.setOnClickListener(this)
+        buttonMoveActivityWithData.setOnClickListener(this)
     }
+    override fun onClick(view: View?){
+        if(view?.id == R.id.buttonMoveActivity){
+            val moveIntent  =   Intent(this@MainActivity, MoveActivity::class.java)
+            startActivity(moveIntent)
+        }
+        if(view?.id == R.id.buttonMoveActivityWithData){
+            val name: EditText  =   findViewById(R.id.name)
+            val age: EditText = findViewById(R.id.age)
 
-    override fun onClick(v: View?) {
-        if(v?.id == R.id.hitung){
-            val panjangValue    =   panjang.text.toString().trim()
-            val lebarValue      =   lebar.text.toString().trim()
-            val tinggiValue     =   tinggi.text.toString().trim()
+            val nameValue: String   =   name.text.toString().trim()
+            val ageValue: Int       =   age.text.toString().trim().toInt()
 
-            var fieldEmpty  =   false
-            if(panjangValue.isEmpty()){
-                fieldEmpty      =   true
-                panjang.error   =   "Panjang tidak boleh kosong!"
-            }
-            if(lebarValue.isEmpty()){
-                fieldEmpty  =   true
-                lebar.error =   "Lebar tidak boleh kosong"
-            }
-            if(tinggiValue.isEmpty()){
-                fieldEmpty      =   true
-                tinggi.error    =   "Tinggi tidak boleh kosong"
-            }
-
-            if(!fieldEmpty) {
-                val volume =
-                    panjangValue.toDouble() * lebarValue.toDouble() * tinggiValue.toDouble()
-                hasil.text = volume.toString()
-            }
+            val moveWithDataIntent  =   Intent(this@MainActivity, MoveActivityData::class.java)
+            moveWithDataIntent.putExtra(MoveActivityData.EXTRA_NAME, nameValue)
+            moveWithDataIntent.putExtra(MoveActivityData.EXTRA_AGE, ageValue)
+            startActivity(moveWithDataIntent)
         }
     }
 }
