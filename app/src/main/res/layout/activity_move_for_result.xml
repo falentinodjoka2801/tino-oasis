@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Number"
+        android:layout_marginBottom="16dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/rb50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="50" />
+        <RadioButton
+            android:id="@+id/rb100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="100" />
+        <RadioButton
+            android:id="@+id/rb150"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="150" />
+        <RadioButton
+            android:id="@+id/rb200"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="200" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonChoose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose" />
+
+</LinearLayout>

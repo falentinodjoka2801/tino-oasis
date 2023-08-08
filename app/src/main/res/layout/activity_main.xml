@@ -42,4 +42,25 @@
         android:layout_marginBottom="16dp"
         android:text="Move With Object" />
 
+    <Button
+        android:id="@+id/buttonDialNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Dial Number" />
+
+    <Button
+        android:id="@+id/buttonMoveForResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Move with Result" />
+
+    <TextView
+        android:id="@+id/hasilActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Result for Activity"
+        android:textSize="24sp" />
 </LinearLayout>
