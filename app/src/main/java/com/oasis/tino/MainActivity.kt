@@ -21,6 +21,8 @@ class MainActivity: AppCompatActivity(), View.OnClickListener {
     private lateinit var buttonMoveForResultActivity: Button
     private lateinit var hasilActivity: TextView
 
+    private lateinit var buttonFormPendaftaran: Button
+
     private val resultLauncher  =   registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result -> if(result.resultCode == MoveForResultActivity.RESULT_CODE){
         val selectedValue   =    result.data?.getIntExtra(MoveForResultActivity.EXTRA_SELECTED_VALUE, 0)
@@ -38,12 +40,14 @@ class MainActivity: AppCompatActivity(), View.OnClickListener {
         buttonDialNumber            =   findViewById(R.id.buttonDialNumber)
         buttonMoveForResultActivity =   findViewById(R.id.buttonMoveForResult)
         hasilActivity               =   findViewById(R.id.hasilActivity)
+        buttonFormPendaftaran   =   findViewById(R.id.goToFormPendaftaran)
 
         buttonMoveActivity.setOnClickListener(this)
         buttonMoveActivityWithData.setOnClickListener(this)
         buttonMoveActivityObject.setOnClickListener(this)
         buttonDialNumber.setOnClickListener(this)
         buttonMoveForResultActivity.setOnClickListener(this)
+        buttonFormPendaftaran.setOnClickListener(this)
     }
     override fun onClick(view: View?){
         if(view?.id == R.id.buttonMoveActivity){
@@ -76,6 +80,10 @@ class MainActivity: AppCompatActivity(), View.OnClickListener {
         if(view?.id == R.id.buttonMoveForResult){
             val moveForResultIntent     =   Intent(this@MainActivity, MoveForResultActivity::class.java)
             resultLauncher.launch(moveForResultIntent)
+        }
+        if(view?.id == R.id.goToFormPendaftaran){
+            val formPendaftaranIntent   =   Intent(this@MainActivity, FormPendaftaran::class.java)
+            startActivity(formPendaftaranIntent)
         }
     }
 }
